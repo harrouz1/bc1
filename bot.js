@@ -1,28 +1,31 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = "-";
+var prefix = "-"// البرفكس هنا
 
-// ========================================== [ CONSTRUCTERS ] =========================================
-
-client.on("ready", async() => {
-    client.user.setGame("Loading...");
-console.log(`Back Online In ${client.guilds.size} Servers!`);
-console.log(`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8\nInvite Me To Your Server!`);
-    setTimeout(() => {
-        client.user.setActivity(`project server`, {type: "WATCHING"});
-    }, 3000);
-});
-
-// ========================================== [ BROADCAST COMMANDS ] ====================================
-
-
-/*
-السلام عليكم ورحمة الله وبركاته .
-هذا ملف بوت برودكاست بوت بالظبط ولكن فيه بعض التصليحات لمشاكل موجودة في البوت
--
-جميع الحقوق محفوظة لسيرفر كودز .
-CODES SERVER - MOORZ
-*/
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+  console.log('')
+  console.log('')
+  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
+  console.log(`[Start] ${new Date()}`);
+  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
+  console.log('')
+  console.log('╔[════════════════════════════════════]╗');
+  console.log(`Logged in as * [ " ${client.user.username} " ]`);
+  console.log('')
+  console.log('Informations :')
+  console.log('')
+  console.log(`servers! [ " ${client.guilds.size} " ]`);
+  console.log(`Users! [ " ${client.users.size} " ]`);
+  console.log(`channels! [ " ${client.channels.size} " ]`);
+  console.log('╚[════════════════════════════════════]╝')
+  console.log('By Wenteed')
+  console.log('╔[════════════]╗')
+  console.log(' Bot Is Online')
+  console.log('╚[════════════]╝')
+  console.log('')
+  console.log('')
+ 
 
 client.on('message', message => {
    if(!message.channel.guild) return;
@@ -71,8 +74,7 @@ msg.delete();
 }
 });
 
-// DONE BY MOORZ .
-// CODES - COPYRIGHT
 
 
-client.login("NDI5Njc5ODcxMDYxNjU1NTUy.DwJUqA.-_K5L6NmPSYCBW7T-gCAyB_4V5g");
+
+client.login(process.env.BOT_TOKEN);
